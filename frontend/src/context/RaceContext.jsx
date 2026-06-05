@@ -10,18 +10,29 @@ export function RaceProvider({ children }) {
   const [weather,        setWeather]        = useState(null);
   const [trackCondition, setTrackCondition] = useState('fast');
   const [loading,        setLoading]        = useState(false);
+  const [wakingUp,       setWakingUp]       = useState(false);
   const [error,          setError]          = useState(null);
 
   // Load race list + weather on mount
   useEffect(() => {
+    // Show "waking up" banner if API takes > 4 seconds (Render free tier cold start)
+    const wakeTimer = setTimeout(() => setWakingUp(true), 4000);
+
     Promise.all([fetchRaces(), fetchWeather()])
       .then(([racesData, weatherData]) => {
+        clearTimeout(wakeTimer);
+        setWakingUp(false);
         setRaces(racesData.races || []);
         setWeather(weatherData);
-        // If weather suggests off-track, default condition accordingly
         if (weatherData?.trackCondition) setTrackCondition(weatherData.trackCondition);
       })
-      .catch((err) => setError(err.message));
+      .catch(() => {
+        clearTimeout(wakeTimer);
+        setWakingUp(false);
+        setError('Unable to reach server. Please refresh the page and try again.');
+      });
+
+    return () => clearTimeout(wakeTimer);
   }, []);
 
   // Load a specific race
@@ -29,12 +40,21 @@ export function RaceProvider({ children }) {
     const cond = condition || trackCondition;
     setLoading(true);
     setError(null);
+
+    const wakeTimer = setTimeout(() => setWakingUp(true), 4000);
+
     fetchRace(raceNumber, cond)
       .then((data) => {
+        clearTimeout(wakeTimer);
+        setWakingUp(false);
         setRaceData(data);
         setSelectedRace(raceNumber);
       })
-      .catch((err) => setError(err.message))
+      .catch(() => {
+        clearTimeout(wakeTimer);
+        setWakingUp(false);
+        setError('Failed to load race. Please try again.');
+      })
       .finally(() => setLoading(false));
   }, [trackCondition]);
 
@@ -47,7 +67,7 @@ export function RaceProvider({ children }) {
   return (
     <RaceContext.Provider value={{
       races, selectedRace, raceData, weather, trackCondition,
-      loading, error, loadRace, setTrackCondition, refreshWeather,
+      loading, wakingUp, error, loadRace, setTrackCondition, refreshWeather,
     }}>
       {children}
     </RaceContext.Provider>

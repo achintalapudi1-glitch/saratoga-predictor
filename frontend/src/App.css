@@ -57,6 +57,20 @@
   color: var(--gray-500);
 }
 
+.app__wakeup {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: #fff8e1;
+  border: 1px solid #ffc107;
+  border-radius: var(--radius);
+  color: #856404;
+  font-size: 0.88rem;
+}
+.app__wakeup p { margin: 0 0 4px; }
+.app__wakeup strong { font-size: 1rem; }
+
 .loading-spinner {
   width: 40px;
   height: 40px;

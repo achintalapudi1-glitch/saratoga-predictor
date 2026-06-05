@@ -11,7 +11,7 @@ import BetCalculator from './components/BetCalculator';
 import './App.css';
 
 function Dashboard() {
-  const { raceData, loading, error, selectedRace } = useRace();
+  const { raceData, loading, wakingUp, error, selectedRace } = useRace();
 
   return (
     <div className="app">
@@ -33,7 +33,17 @@ function Dashboard() {
             </div>
           )}
 
-          {loading && (
+          {wakingUp && (
+            <div className="app__wakeup">
+              <div className="loading-spinner" />
+              <div>
+                <p><strong>☕ Waking up the server…</strong></p>
+                <p>Free tier server is starting — this takes up to 30 seconds on first load. Please wait!</p>
+              </div>
+            </div>
+          )}
+
+          {loading && !wakingUp && (
             <div className="app__loading">
               <div className="loading-spinner" />
               <p>Loading race analysis…</p>
