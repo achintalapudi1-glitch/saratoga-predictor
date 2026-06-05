@@ -1,0 +1,9 @@
+{
+  "short_name": "Saratoga Handicapper",
+  "name": "Saratoga Race Course Handicapper",
+  "description": "AI-powered horse racing analysis for Saratoga Race Course",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#1a3a2a",
+  "background_color": "#f0f4f0"
+}

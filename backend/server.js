@@ -11,7 +11,25 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // ── Middleware ──────────────────────────────────────────────────────────────
-app.use(cors({ origin: ['http://localhost:3000', 'http://127.0.0.1:3000'] }));
+// Origins always allowed (covers both dev and Render prod)
+const ALWAYS_ALLOWED = [
+  /\.onrender\.com$/,              // all Render subdomains
+  'http://localhost:3000',
+  'http://127.0.0.1:3000',
+];
+if (process.env.FRONTEND_URL) ALWAYS_ALLOWED.push(process.env.FRONTEND_URL);
+
+app.use(cors({
+  origin: (origin, cb) => {
+    // Allow no-origin requests (Postman, curl, server-to-server)
+    if (!origin) return cb(null, true);
+    const ok = ALWAYS_ALLOWED.some((o) =>
+      o instanceof RegExp ? o.test(origin) : o === origin
+    );
+    cb(ok ? null : new Error(`CORS blocked: ${origin}`), ok);
+  },
+  credentials: true,
+}));
 app.use(express.json());
 
 const limiter = rateLimit({ windowMs: 60_000, max: 100 });
