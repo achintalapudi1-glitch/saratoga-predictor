@@ -1,0 +1,219 @@
+.model-comp {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-300);
+}
+
+.model-comp__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.model-comp__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--green-dark);
+}
+
+.model-comp__wet-toggle {
+  background: #ebf5ff;
+  border: 1px solid var(--blue);
+  color: var(--blue);
+  padding: 5px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all var(--transition);
+}
+.model-comp__wet-toggle--active {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.model-legend {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.legend-pill {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 12px;
+  letter-spacing: .3px;
+}
+.legend-pill--a { background: rgba(45,90,61,.12);  color: var(--green-mid); }
+.legend-pill--b { background: rgba(44,82,130,.12); color: var(--blue);      }
+.legend-pill--c { background: rgba(85,60,154,.12); color: var(--purple);    }
+.legend-pill--d { background: rgba(192,57,43,.12); color: var(--red);       }
+.legend-pill--w { background: rgba(0,120,212,.12); color: #0078d4;          }
+
+.model-table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--gray-300);
+}
+
+.model-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.model-table thead tr {
+  background: var(--green-dark);
+  color: var(--white);
+}
+
+.model-table th {
+  padding: 10px 12px;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.model-col { text-align: center; }
+.model-col--a { background: rgba(45,90,61,.08); }
+.model-col--b { background: rgba(44,82,130,.06); }
+.model-col--c { background: rgba(85,60,154,.06); }
+.model-col--d { background: rgba(192,57,43,.06); }
+.model-col--w { background: rgba(0,120,212,.06); }
+
+.model-row { border-bottom: 1px solid var(--gray-100); transition: background var(--transition); }
+.model-row:hover { background: var(--gray-100); }
+.model-row--consensus { background: var(--green-pale); }
+.model-row--consensus:hover { background: #d5eedd; }
+.model-row--overlay { border-left: 3px solid var(--purple); }
+
+.model-table td {
+  padding: 10px 12px;
+  vertical-align: middle;
+}
+
+.prog-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  background: var(--green-mid);
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.model-cell--name { min-width: 130px; }
+.horse-name { font-weight: 600; color: var(--gray-900); }
+
+.consensus-tag {
+  display: block;
+  font-size: 0.62rem;
+  color: var(--green-mid);
+  font-weight: 700;
+  letter-spacing: .3px;
+}
+
+.model-cell--jockey { font-size: 0.78rem; color: var(--gray-700); white-space: nowrap; }
+.model-cell--ml     { font-weight: 700; white-space: nowrap; }
+
+.rank-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.rank-num {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 5px;
+  background: var(--gray-100);
+  color: var(--gray-700);
+}
+.rank-num--top { font-size: 0.78rem; }
+
+.rank-bar-wrap {
+  width: 50px;
+  height: 4px;
+  background: var(--gray-200);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.rank-bar {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.5s ease;
+}
+
+.edge-badge {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--gray-700);
+}
+.edge-badge--overlay {
+  color: var(--purple);
+  background: var(--purple-pale);
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.wet-badge { font-size: 0.8rem; font-weight: 600; }
+.wet-badge--mudder { color: #0078d4; }
+
+.role-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+.model-cell--figs { white-space: nowrap; }
+.fig-pill {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: var(--gray-100);
+  margin-right: 3px;
+  color: var(--gray-700);
+}
+.fig-pill--recent {
+  background: var(--green-pale);
+  color: var(--green-dark);
+  border: 1px solid var(--green-light);
+}
+
+.equip-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  background: #fff3cd;
+  color: #856404;
+  padding: 1px 5px;
+  border-radius: 4px;
+  margin-right: 3px;
+  border: 1px solid #ffc107;
+}
+.equip-none { color: var(--gray-300); font-size: 0.8rem; }
+
+.model-comp__footnote {
+  font-size: 0.72rem;
+  color: var(--gray-500);
+  margin-top: 12px;
+  font-style: italic;
+}

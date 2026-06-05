@@ -1,0 +1,95 @@
+.race-selector {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-300);
+}
+
+.race-selector__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  margin-bottom: 14px;
+}
+
+.race-selector__list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.race-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 2px solid var(--gray-300);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  cursor: pointer;
+  text-align: left;
+  transition: all var(--transition);
+  width: 100%;
+}
+.race-card:hover {
+  border-color: var(--green-light);
+  background: var(--green-pale);
+}
+.race-card--active {
+  border-color: var(--green-mid);
+  background: var(--green-pale);
+  box-shadow: 0 0 0 3px rgba(45, 90, 61, .15);
+}
+.race-card:disabled { opacity: .6; cursor: not-allowed; }
+
+.race-card__number {
+  background: var(--green-mid);
+  color: var(--white);
+  font-size: 0.85rem;
+  font-weight: 700;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.race-card--active .race-card__number {
+  background: var(--green-dark);
+}
+
+.race-card__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.race-card__type {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--gray-900);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.race-card__details {
+  font-size: 0.75rem;
+  color: var(--gray-500);
+}
+
+.race-card__post {
+  font-size: 0.72rem;
+  color: var(--green-mid);
+  font-weight: 500;
+}
+
+.race-card__purse {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--gold);
+  white-space: nowrap;
+}

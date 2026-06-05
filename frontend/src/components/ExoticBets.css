@@ -1,0 +1,149 @@
+.exotic-bets {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-300);
+}
+
+.exotic-bets__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.exotic-bets__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--green-dark);
+}
+
+.exotic-bets__rain-toggle {
+  background: #ebf5ff;
+  border: 1px solid var(--blue);
+  color: var(--blue);
+  padding: 5px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all var(--transition);
+}
+.exotic-bets__rain-toggle--active {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.exotic-bets__rain-note {
+  background: #fff3cd;
+  border: 1px solid #ffc107;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.82rem;
+  color: #856404;
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+
+.exotic-bets__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+/* ── Card ───────────────────────────────────────────────────────────────── */
+.exotic-card {
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: box-shadow var(--transition);
+  background: var(--gray-100);
+}
+.exotic-card:hover { box-shadow: var(--shadow-sm); background: var(--white); }
+
+.exotic-card__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.exotic-card__icon { font-size: 1.4rem; flex-shrink: 0; }
+
+.exotic-card__title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.exotic-card__desc {
+  font-size: 0.72rem;
+  color: var(--gray-500);
+  margin-top: 2px;
+}
+
+/* ── Horses ─────────────────────────────────────────────────────────────── */
+.exotic-card__horses {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.exotic-card__horse-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: var(--green-mid);
+  color: var(--white);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.exotic-card__arrow {
+  font-size: 0.75rem;
+  color: var(--gray-500);
+}
+
+/* ── Stats ──────────────────────────────────────────────────────────────── */
+.exotic-card__stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.exotic-stat {
+  background: var(--white);
+  border-radius: 6px;
+  padding: 5px 8px;
+  border: 1px solid var(--gray-300);
+}
+.exotic-stat__label {
+  display: block;
+  font-size: 0.62rem;
+  color: var(--gray-500);
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  margin-bottom: 1px;
+}
+.exotic-stat__value {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+.exotic-stat__value--prob { color: var(--green-mid); }
+
+.exotic-card__note {
+  font-size: 0.75rem;
+  color: var(--green-mid);
+  font-weight: 500;
+  font-style: italic;
+}

@@ -1,0 +1,244 @@
+.top-picks {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-300);
+}
+
+.top-picks__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.top-picks__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--green-dark);
+}
+
+.top-picks__race-info {
+  font-size: 0.78rem;
+  color: var(--gray-500);
+}
+
+.top-picks__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+/* ── Pick card ─────────────────────────────────────────────────────────── */
+.pick-card {
+  border-radius: var(--radius);
+  padding: 16px;
+  border: 2px solid var(--gray-300);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: box-shadow var(--transition);
+}
+.pick-card:hover { box-shadow: var(--shadow-md); }
+
+.pick-card--1 { border-color: #f0c040; background: #fffdf0; }
+.pick-card--2 { border-color: #c0c8d0; background: #f8fafc; }
+.pick-card--3 { border-color: #c8a080; background: #fdf8f4; }
+
+.pick-card__rank-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pick-card__medal { font-size: 1.4rem; }
+.pick-card__num   { font-size: 1.1rem; font-weight: 700; color: var(--green-dark); }
+
+.pick-card__overlay-badge {
+  background: var(--purple);
+  color: var(--white);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 10px;
+}
+
+.pick-card__consensus-badge {
+  background: var(--green-mid);
+  color: var(--white);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 10px;
+}
+
+.pick-card__name {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* ── Confidence bar ─────────────────────────────────────────────────────── */
+.pick-card__confidence { display: flex; flex-direction: column; gap: 4px; }
+
+.conf-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--gray-500);
+  text-transform: uppercase;
+  letter-spacing: .4px;
+}
+
+.conf-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.conf-bar-bg {
+  flex: 1;
+  height: 8px;
+  background: var(--gray-200);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.conf-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--green-light), var(--green-dark));
+  transition: width 0.6s ease;
+}
+
+.conf-value {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  white-space: nowrap;
+}
+
+/* ── Meta grid ──────────────────────────────────────────────────────────── */
+.pick-card__meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.meta-item {
+  background: var(--gray-100);
+  border-radius: 6px;
+  padding: 5px 8px;
+}
+.meta-item--highlight {
+  background: var(--green-pale);
+  border: 1px solid var(--green-light);
+}
+
+.meta-item__label {
+  display: block;
+  font-size: 0.65rem;
+  color: var(--gray-500);
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  margin-bottom: 1px;
+}
+
+.meta-item__value {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+/* ── Figures ────────────────────────────────────────────────────────────── */
+.pick-card__figures {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.pick-card__fig-label {
+  font-size: 0.72rem;
+  color: var(--gray-500);
+  font-weight: 500;
+}
+
+.pick-card__fig {
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 5px;
+  background: var(--gray-100);
+  color: var(--gray-700);
+}
+.pick-card__fig--recent {
+  background: var(--green-pale);
+  color: var(--green-dark);
+  border: 1px solid var(--green-light);
+}
+
+.pick-card__pace-rating {
+  margin-left: auto;
+  font-size: 0.75rem;
+  color: var(--blue);
+  font-weight: 600;
+  background: var(--blue-pale);
+  padding: 2px 7px;
+  border-radius: 5px;
+}
+
+/* ── Equipment ──────────────────────────────────────────────────────────── */
+.pick-card__equipment { display: flex; gap: 5px; flex-wrap: wrap; }
+
+.pick-card__equip-tag {
+  font-size: 0.72rem;
+  background: #fff3cd;
+  color: #856404;
+  padding: 2px 7px;
+  border-radius: 5px;
+  border: 1px solid #ffc107;
+  font-weight: 500;
+}
+
+/* ── Wet record ─────────────────────────────────────────────────────────── */
+.pick-card__wet-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.wet-record { font-size: 0.75rem; color: var(--gray-700); }
+
+.mud-badge {
+  background: #e8f4fd;
+  color: #0078d4;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 5px;
+}
+
+/* ── Days off ───────────────────────────────────────────────────────────── */
+.pick-card__days-off {
+  font-size: 0.75rem;
+  color: var(--gray-500);
+}
+.days-warn { color: #e67e22; font-weight: 600; }
+
+/* ── Disclaimer ─────────────────────────────────────────────────────────── */
+.top-picks__disclaimer {
+  font-size: 0.75rem;
+  color: var(--red);
+  font-weight: 500;
+  padding: 8px 12px;
+  background: var(--red-pale);
+  border-radius: 8px;
+  margin-top: 4px;
+}

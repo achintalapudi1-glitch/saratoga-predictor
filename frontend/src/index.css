@@ -1,0 +1,52 @@
+/* ── Global Reset & Variables ───────────────────────────────────────────── */
+:root {
+  --green-dark:   #1a3a2a;
+  --green-mid:    #2d5a3d;
+  --green-light:  #4a8c5c;
+  --green-pale:   #e8f5ec;
+  --gold:         #c9a84c;
+  --gold-light:   #f0d080;
+  --gold-pale:    #fdf6e3;
+  --red:          #c0392b;
+  --red-pale:     #fdecea;
+  --blue:         #2c5282;
+  --blue-pale:    #ebf4ff;
+  --purple:       #553c9a;
+  --purple-pale:  #f3f0ff;
+  --gray-900:     #111827;
+  --gray-700:     #374151;
+  --gray-500:     #6b7280;
+  --gray-300:     #d1d5db;
+  --gray-100:     #f3f4f6;
+  --white:        #ffffff;
+  --shadow-sm:    0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.08);
+  --shadow-md:    0 4px 16px rgba(0,0,0,.12);
+  --shadow-lg:    0 10px 32px rgba(0,0,0,.14);
+  --radius:       12px;
+  --radius-sm:    8px;
+  --transition:   0.2s ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #f0f4f0;
+  color: var(--gray-900);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a { color: var(--green-mid); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Scrollbar ───────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--gray-100); }
+::-webkit-scrollbar-thumb { background: var(--green-light); border-radius: 4px; }
+
+/* ── Utility ─────────────────────────────────────────────────────────────── */
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap;
+}

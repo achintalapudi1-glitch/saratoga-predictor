@@ -1,0 +1,122 @@
+.odds-panel {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-300);
+}
+
+.odds-panel__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  margin-bottom: 6px;
+}
+
+.odds-panel__note {
+  font-size: 0.75rem;
+  color: var(--gray-500);
+  margin-bottom: 14px;
+  font-style: italic;
+}
+
+.odds-table {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.odds-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  background: var(--gray-100);
+  transition: background var(--transition);
+}
+.odds-row:hover { background: var(--green-pale); }
+.odds-row--fav  { background: #fffbeb; border: 1px solid var(--gold-light); }
+
+.odds-row__num {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--white);
+  background: var(--green-mid);
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.odds-row__name {
+  flex: 1;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gray-900);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.odds-row__odds {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  min-width: 38px;
+  text-align: right;
+}
+
+.odds-row__bar-wrap {
+  width: 80px;
+  height: 6px;
+  background: var(--gray-300);
+  border-radius: 3px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.odds-row__bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--green-light), var(--green-dark));
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+.odds-row__implied {
+  font-size: 0.75rem;
+  color: var(--gray-500);
+  min-width: 36px;
+  text-align: right;
+}
+
+.odds-row__fav-badge {
+  background: var(--gold);
+  color: var(--green-dark);
+  font-size: 0.62rem;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 10px;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
+
+.odds-row__overlay {
+  background: var(--purple);
+  color: var(--white);
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+.odds-panel__disclaimer {
+  font-size: 0.72rem;
+  color: var(--gray-500);
+  margin-top: 12px;
+  font-style: italic;
+}

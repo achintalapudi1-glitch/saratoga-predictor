@@ -1,0 +1,80 @@
+.header {
+  background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 60%, #1e5c30 100%);
+  border-bottom: 3px solid var(--gold);
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow-md);
+}
+
+.header__inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.header__brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.header__horse {
+  font-size: 2.4rem;
+  line-height: 1;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,.3));
+}
+
+.header__title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+}
+
+.header__subtitle {
+  font-size: 0.8rem;
+  color: var(--gold-light);
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.header__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.header__badge {
+  background: var(--gold);
+  color: var(--green-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.header__disclaimer {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,.5);
+  font-style: italic;
+}
+
+@media (max-width: 640px) {
+  .header__title { font-size: 1.3rem; }
+  .header__meta { align-items: flex-start; }
+  .header__horse { font-size: 1.8rem; }
+}
